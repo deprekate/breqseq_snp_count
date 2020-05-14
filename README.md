@@ -1,10 +1,10 @@
-# breqseq_snp_count
+# breqseq_tools
+
+
+## snp_count
 A script to count the number of SPSs per gene
 
-
-
 Example
---------------
 
 Run on included sample data:
 ```sh
@@ -19,4 +19,16 @@ AMNIBMGE_00007	1.0
 AMNIBMGE_00008	10.0
 AMNIBMGE_00009	44.0
 AMNIBMGE_00010	3.0
+```
+
+
+## remove_false_positives
+A script to remove the SNPs already present at timepoint zero from subsequent later timepoints
+
+Example
+
+Run on included sample data:
+```sh
+$ python3 remove_false_positves.py TIMEPOINT0/index.html TIMEPOINT1/index.html 
+
 ```
