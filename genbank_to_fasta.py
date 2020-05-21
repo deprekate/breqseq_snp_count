@@ -37,6 +37,8 @@ with open(sys.argv[1]) as fp:
 			flag = False
 		elif line.startswith('ORIGIN'):
 			flag = False
+		elif not line.startswith('                     '):
+			flag = False
 		elif flag:
 			print(line.replace('"', '').strip())
 
