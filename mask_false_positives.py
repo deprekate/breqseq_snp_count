@@ -63,9 +63,10 @@ row_html = ''
 row_name = None
 with open(sys.argv[2] + 'index.html', 'r') as fp, open(sys.argv[2] + 'index_temp.html', 'w') as outfile:
 	for line in fp:
-		if line.startswith('.polymorphism_table_row'):
+		if line.startswith('.unhidden'):
+			# define new css for a bad class
 			outfile.write(line)
-			outfile.write('.polymorphism_table_row_bad {background-color: rgb(255,0,0); text-decoration: line-through;}\n')
+			outfile.write('.bad {background-color: rgb(255,0,0); text-decoration: line-through;}\n')
 		elif line.startswith('<!-- Print The Table Row -->'):
 			row_html += line
 		elif line.startswith('<!-- End Table Row -->'):
@@ -75,7 +76,7 @@ with open(sys.argv[2] + 'index.html', 'r') as fp, open(sys.argv[2] + 'index_temp
 		elif line.endswith('<!-- Position -->\n'):
 			row_html += line
 			if remove_html_markup(line).replace(',', '') in false_positives:
-				row_html = row_html.replace('polymorphism_table_row', 'polymorphism_table_row_bad')
+				row_html = row_html.replace('class="', 'class="bad ')
 		elif row_html:
 			row_html += line
 		else:
