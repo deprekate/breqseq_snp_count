@@ -74,7 +74,6 @@ with open(sys.argv[2] + 'index.html', 'r') as fp, open(sys.argv[2] + 'index_temp
 			row_html = ''
 		elif line.endswith('<!-- Position -->\n'):
 			row_html += line
-			#print("==", remove_html_markup(line), "==", sep='')
 			if remove_html_markup(line).replace(',', '') in false_positives:
 				row_html = row_html.replace('polymorphism_table_row', 'polymorphism_table_row_bad')
 		elif row_html:

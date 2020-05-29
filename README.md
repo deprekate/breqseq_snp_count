@@ -1,4 +1,4 @@
-# breseq_tools
+e breseq_tools
 
 
 ## snp_count
@@ -22,13 +22,13 @@ AMNIBMGE_00010	3.0
 ```
 
 
-## remove_false_positives
+## mask_false_positives
 A script to remove the SNPs already present at timepoint zero from subsequent later timepoints
 
 Example
 
 Run on included sample data:
 ```sh
-$ python3 remove_false_positves.py TIMEPOINT0/index.html TIMEPOINT1/index.html 
+$ python3 mask_false_positves.py FALSE_POSITVE_DIR TO_BE_MASKED_DIR
 
 ```
