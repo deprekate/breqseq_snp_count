@@ -66,7 +66,7 @@ with open(sys.argv[2] + 'index.html', 'r') as fp, open(sys.argv[2] + 'index_temp
 		if line.startswith('.unhidden'):
 			# define new css for a bad class
 			outfile.write(line)
-			outfile.write('.bad {background-color: rgb(255,0,0); text-decoration: line-through;}\n')
+			outfile.write('.bad {display: none; background-color: rgb(255,0,0); text-decoration: line-through;}\n')
 		elif line.startswith('<!-- Print The Table Row -->'):
 			row_html += line
 		elif line.startswith('<!-- End Table Row -->'):

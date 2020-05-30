@@ -28,7 +28,7 @@ html_table_pd = pd.read_html(html_table_text)
 '''
 #-------------------------------------------------------------------------------------------------#
 
-html_table_pd = pd.read_html(sys.argv[1], header=1, encoding='utf-8')[0]
+html_table_pd = pd.read_html(sys.argv[1], header=1, encoding='utf-8', displayed_only=True )[0]
 
 gene_snp_counts = dict()
 
